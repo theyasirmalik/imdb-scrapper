@@ -4,7 +4,7 @@ PHP IMDB Scrapper class (updated)
 // Free PHP IMDb Scraper API for the new IMDb Template.
 // Author: Yasir Malik
 // Email: theyasirmalik@gmail.com
-// Last Updated: April 20, 2020
+// Last Updated: 27 Mar 2022 ex April 20, 2020
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 Updated Log:
 1. Added SSL Support for IMDB
@@ -12,6 +12,7 @@ Updated Log:
 100% Working
 /*
 * Try Fetching movie details from IMDB
+* This Code is fully tested on Codeigniter framework, you can change some syntax as per your code framework
 */
 
 	 	  header('Content-Type: application/json;charset=utf8');
@@ -19,11 +20,11 @@ Updated Log:
 		 include "imdb.php";
 		 
 	 	  /* Get IMDB Movie Link without any string params e.g https://www.imdb.com/title/tt7286456/ */
-		  $imdb_link = $this->input->post("link"); 
+		  $imdb_link = $this->input->post("link"); //imdb movie link e.g. "https://www.imdb.com/title/tt6710474/";
 		  
 		  if(!empty($imdb_link) AND strstr($imdb_link, 'https://')) {
 			try {
-				$output = $this->imdb->scrapeMovieInfo($imdb_link);
+				$output = $this->imdb->scrapeMovieInfo($imdb_link); //call_function as per php framework syntax
 				
 				
 				
